@@ -105,7 +105,7 @@ export const CreateGoogleAccoutButton = styled.TouchableOpacity`
     flex-direction: row;
     border: 1px;
     border-radius: 15px;
-    padding: 5px;
+    padding: 10px;
     align-items: center;
     border-color: #9F9F9F;
 `
