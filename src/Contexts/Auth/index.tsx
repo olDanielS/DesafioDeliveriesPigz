@@ -1,25 +1,36 @@
-import {useState,createContext} from 'react';
+import { useState, createContext, ReactNode } from 'react';
 
-export const AuthContext = createContext();
+type UserProps = {
+    id?: String;
+    email: String;
+    password: String
+}
 
- function AuthProvider({children}){
-    const [user, setUser] = useState<null|object>(null)
+type AuthProviderProps = {
+    children: ReactNode
+}
 
-     interface UserLogin{
-        email: String,
-        password: String
+export const AuthContext = createContext({});
+
+function AuthProvider({ children }: AuthProviderProps) {
+    const [user, setUser] = useState<UserProps>({
+        id: '',
+        email: '',
+        password: ''
+    })
+
+    const isAuthenticated = !!user.email;
+
+
+    function handleLogin({email, password}: UserProps) {
+       setUser({email, password})
+       
     }
 
-    function handleLogin(data: UserLogin){
-        if(data.email && data.password){
-            setUser(data)
-        }
-    }
-
-    return(
-    <AuthContext.Provider value={{user, handleLogin}}>
-        {children}
-    </AuthContext.Provider>
-)
+    return (
+        <AuthContext.Provider value={{ user, handleLogin,isAuthenticated }}>
+            {children}
+        </AuthContext.Provider>
+    )
 }
 export default AuthProvider;

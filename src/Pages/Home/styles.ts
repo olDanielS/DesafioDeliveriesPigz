@@ -1,13 +1,14 @@
 import styled from "styled-components/native";
-import { PrimaryColor, SecondaryColor } from "../globalStyles";
+import {OrangePrimaryColor, WhitePrimaryColor, BlackSecondaryColor} from '../globalStyles'
 
 export const CardHeader = styled.View`
-    background-color: ${PrimaryColor};
+    background-color: ${OrangePrimaryColor};
     width: 100%;
     height: 120px;
-    border-radius: 15px;
+    border-radius: 16px;
     padding: 20px;
     justify-content: space-between;
+
 `
 export const HeaderCard = styled.View`
     flex-direction: row;
@@ -16,12 +17,12 @@ export const HeaderCard = styled.View`
 `
 export const HeaderTitle= styled.Text`
     font-size: 18px;
-    color: ${SecondaryColor};
+    color: ${WhitePrimaryColor};
     font-weight: 400;
 `
 export const HeaderDate= styled.Text`
    font-size: 18px;
-   color: ${SecondaryColor};
+   color: ${WhitePrimaryColor};
 `
 export const ContentCard = styled.View`
     flex-direction: row;
@@ -30,15 +31,15 @@ export const ContentCard = styled.View`
 `
 export const ContentTitle= styled.Text`
     font-size: 24px;
-    color: ${SecondaryColor};
+    color: ${WhitePrimaryColor};
     font-weight: bold;
 `
 export const BtnContentCard= styled.TouchableOpacity`
    font-size: 18px;
-   color: ${SecondaryColor};
+   color: ${WhitePrimaryColor};
 `
 export const Cards = styled.View`
-    background-color:${SecondaryColor};
+    background-color:${WhitePrimaryColor};
     width: 100%;
     height: 210px;
     border-radius: 15px;
@@ -52,7 +53,7 @@ export const CardResumeItems = styled.View`
     flex-direction: row;
 `
 export const HeaderResume = styled.Text`
-    color: #000;
+    color: ${BlackSecondaryColor};
     font-size: 18px;
     font-weight: bold;
 `
@@ -62,36 +63,39 @@ export const ViewNewIdetification = styled.View`
 `
 export const InputNewIdetification = styled.TextInput`
     width: 75%;
+    height: 44px;
     border: 2px;
-    border-color: ${PrimaryColor};
+    border-color: ${OrangePrimaryColor};
     border-radius: 15px;
     padding: 10px;
     margin-top: 7px;
     
 `  
 export const SubmitNewIdetification = styled.TouchableOpacity`
-    background-color: ${PrimaryColor};
+    background-color: ${OrangePrimaryColor};
     border-radius: 15px;
-    padding: 15px;
     margin-top: 7px;
     margin-left: 10px;
     width: 20%;
+    height: 46px;
     align-items: center;
+    justify-content: center;
 `  
 export const SubmitScanQR = styled.TouchableOpacity`
-    background-color: ${PrimaryColor};
+    background-color: ${OrangePrimaryColor};
     border-radius: 15px;
     padding: 10px;
     margin-top: 7px;
     width: 100%;
+    height: 46px;
     align-items: center;
     justify-content: center;
     flex-direction: row;
 `  
 export const TextScanQR = styled.Text`
-    font-size: 20px;
+    font-size: 16px;
     text-align: center;
-    color: ${SecondaryColor};
+    color: ${WhitePrimaryColor};
     font-weight: 500;
     margin-left: 10px;
 `  

@@ -1,11 +1,11 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
 
 import Home from "../../Pages/Home";
 import Profile from "../../Pages/Profile";
 import Reports from "../../Pages/Reports";
 
-import AuthenticatedRoutes from "../StackRoutersAuthenticated";
+import {OrangePrimaryColor} from '../../Pages/globalStyles'
 
 import Feather from '@expo/vector-icons/Feather';
 
@@ -14,7 +14,7 @@ export default function TabRoutes(){
    
     return(
         <Tab.Navigator initialRouteName="Home" screenOptions={{
-            tabBarActiveTintColor: '#7159C1',
+            tabBarActiveTintColor: `${OrangePrimaryColor}`,
             tabBarInactiveTintColor: '#696969',
             tabBarLabelStyle: {fontSize: 14},
             headerTitleAlign: 'center'

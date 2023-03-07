@@ -6,13 +6,13 @@ import StackRoutes from "./StackRoutes";
 import TabRoutes from './TabRoutes';
 
 export default function Routers(){
-    const {user}:any = useContext(AuthContext);
+    const {isAuthenticated}:any= useContext(AuthContext);
 
     return(
-        <NavigationContainer>
+        <>
             {
-                user ? <TabRoutes/> : <StackRoutes/>
+                isAuthenticated ? <TabRoutes/> : <StackRoutes/>
             }
-        </NavigationContainer>
+        </>
     )
 }

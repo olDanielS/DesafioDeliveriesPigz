@@ -1,9 +1,11 @@
+import { StyleSheet, View, Text } from "react-native"
+
+import {BlackSecondaryColor} from '../../Pages/globalStyles'
 
 interface Values{
     title: String,
     value: number,
 }
-import { StyleSheet, View, Text } from "react-native"
 
 export default function ItemCard(props: Values){
     return(
@@ -13,8 +15,6 @@ export default function ItemCard(props: Values){
         </View>
     )
 }
-
-
 
 const styles = StyleSheet.create({
     Container: {
@@ -41,6 +41,7 @@ const styles = StyleSheet.create({
         paddingTop: 5,
         textAlign: 'center',
         fontSize: 34,
-        fontWeight: '500'
+        fontWeight: '500',
+        color: `${BlackSecondaryColor}`
     }
 })

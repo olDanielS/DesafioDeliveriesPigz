@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { SafeAreaView, Text, FlatList, KeyboardAvoidingView, Platform, ScrollView} from "react-native";
-import { Container, OrangeSecondaryColor} from "../globalStyles";
+import { Container, OrangeSecondaryColor, WhitePrimaryColor} from "../globalStyles";
 import { CardHeader, HeaderCard, HeaderTitle, HeaderDate,
     ContentCard, BtnContentCard, ContentTitle,Cards,
     CardResumeItems,HeaderResume,ViewNewIdetification,
@@ -40,9 +40,9 @@ export default function Home(){
                         <HeaderDate>{date}</HeaderDate>
                     </HeaderCard>
                     <ContentCard>
-                        <ContentTitle>R$ {activeEye ? gain : '****'}</ContentTitle>
+                        <ContentTitle>R$ {activeEye ? gain : '----'}</ContentTitle>
                         <BtnContentCard onPress={() => activeEye ? setActiveEye(false):setActiveEye(true)}>
-                            <Feather name={activeEye ? "eye": "eye-off"} color={OrangeSecondaryColor} size={32}/>
+                            <Feather name={activeEye ? "eye": "eye-off"} color={WhitePrimaryColor} size={32}/>
                         </BtnContentCard>
                     </ContentCard>
                 </CardHeader>
@@ -68,7 +68,7 @@ export default function Home(){
                             
                         />
                         <SubmitNewIdetification onPress={() => navigation.navigate('Deliveries')}>
-                            <Text style={{fontSize: 20, color: "#FFF"}}>Ok</Text>
+                            <Text style={{fontSize: 17, color: "#FFF"}}>Ok</Text>
                         </SubmitNewIdetification>
                     </ViewNewIdetification>
                     <SubmitScanQR>

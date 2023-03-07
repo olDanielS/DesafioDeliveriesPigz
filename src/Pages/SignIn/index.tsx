@@ -22,18 +22,12 @@ export default function SignIn() {
 	const navigation = useNavigation();
 
 	const [email, setEmail] = useState('');
-	const [pass, setPass] = useState('');
+	const [password, setPass] = useState('');
 
-	const {handleLogin} = useContext(AuthContext);
+	const {handleLogin}:any = useContext(AuthContext);
 
-
-
-	function login(){
-		if(email && pass){
-			handleLogin(email, pass)
-		}else{
-			return Alert.alert("Atenção", "Os campos não podem permanecer vazios");
-		}	
+	async function login(){
+		await handleLogin({email, password})	
 	}
 
 	return (
@@ -53,7 +47,7 @@ export default function SignIn() {
 					autoCapitalize="none"
 					autoComplete="email"
 					value={email}
-					onChangeText={(text) => setEmail(text)}
+					onChangeText={setEmail}
 					/>
 
 					<LabelInputs>Senha</LabelInputs>
@@ -62,8 +56,8 @@ export default function SignIn() {
 						secureTextEntry={visible ? false : true}
 						autoCapitalize="none"
 						autoComplete="off"
-						value={pass}
-						onChangeText={(text) => setPass(text)}
+						value={password}
+						onChangeText={setPass}
 					/>
 					<TouchableOpacity onPress={() => visible? setVisible(false) : setVisible(true) }>
 						<Feather name={visible ? 'eye' : "eye-off"} size={32} color={OrangeSecondaryColor}/>
