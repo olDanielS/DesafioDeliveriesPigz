@@ -1,6 +1,7 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-
+import { OverView } from "../StackRoutesAuthenticated";
 import Home from "../../Pages/Home";
 import Profile from "../../Pages/Profile";
 import Reports from "../../Pages/Reports";
@@ -13,7 +14,7 @@ export default function TabRoutes(){
     const Tab = createBottomTabNavigator();
    
     return(
-        <Tab.Navigator initialRouteName="Home" screenOptions={{
+        <Tab.Navigator initialRouteName="OverView" screenOptions={{
             tabBarActiveTintColor: `${OrangePrimaryColor}`,
             tabBarInactiveTintColor: '#696969',
             tabBarLabelStyle: {fontSize: 14},
@@ -27,8 +28,9 @@ export default function TabRoutes(){
                 )
             }}
         />
-        <Tab.Screen name="Home" component={Home}
-            options={{
+        <Tab.Screen name="OverView" component={OverView}
+             options={{
+                headerShown: false,
                 tabBarLabel: "Visão geral",
                 title: 'Visão geral',
                 tabBarIcon: ({color, size}) =>(
@@ -48,4 +50,13 @@ export default function TabRoutes(){
         
     </Tab.Navigator>
 )
+}
+function StackPages(){
+    const Stack = createNativeStackNavigator();
+    return(
+        <Stack.Navigator>
+            <Stack.Screen name="Deliveries" component={Deliveries}/>
+        </Stack.Navigator>
+    )
+
 }
